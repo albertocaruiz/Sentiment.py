@@ -22,7 +22,7 @@ p=0
 pintxt=[]
 n=0
 nintxt=[]
-e=0  #neutralne
+e=0  #neutral
 eintxt=[]
 
 b= read_file()
@@ -68,23 +68,23 @@ def pie_chart():
     plt.show()
 counterp = collections.Counter(pintxt)
 countern = collections.Counter(nintxt)
-pmc=counterp.most_common()#positive most common
-nmc=countern.most_common()#negative most common
+pmc=counterp.most_common()#positivo
+nmc=countern.most_common()#negativo
 
-#sortowanie list malejąco
+# ordenar listas descendentes
 pmc.sort(key=operator.itemgetter(1),reverse=True)
 nmc.sort(key=operator.itemgetter(1),reverse=True)
 
-#funkcja drukuje podaną ilość najpopularniejszych pozytywnych słów w tekście.
-#domyślnie podaje listę wszystkich pozytywnych słów jakie wystąpiły w tekśćie
+#function imprime el número dado de palabras positivas más populares en el texto.
+#por defecto enumera todas las palabras positivas en el texto
 def pos_words_list(n=len(pmc)):
     słowo = [x[0] for x in pmc]
     ilość = [x[1] for x in pmc]
     for i in range(n):
         print("{:-<15} {}".format(słowo[i], ilość[i]))
 
-#funkcja drukuje podaną ilość najpopularniejszych negatywnych słów w tekście.
-#domyślnie podaje listę wszystkich negatywnych słów jakie wystąpiły w tekśćie
+#function imprime el número dado de palabras negativas más comunes en el texto.
+#por defecto enumera todas las palabras negativas en el texto
 def neg_words_list(n=len(nmc)):
     słowo = [x[0] for x in nmc]
     ilość = [x[1] for x in nmc]
